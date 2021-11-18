@@ -13,14 +13,19 @@ public class Spawner : MonoBehaviour
 
     public GameObject Worker;
     public GameObject[] Shapes;
-    public int workerCount = 1;
+
+    public int workerCount = 3;
     public int lives = 3;
-    public float gameLength = 60f;
+    public float gameLength = 180f;
+
     private float endTime = 0;
 
     private void Awake()
     {
         spawner = this;
+        workerCount = Events.workerCount;
+        lives = Events.lives;
+        gameLength = Events.gameLength;
     }
 
     private void Start()
@@ -61,4 +66,6 @@ public class Spawner : MonoBehaviour
 
         Instantiate(Shapes[i], transform.position, Quaternion.identity);
     }
+
+
 }
