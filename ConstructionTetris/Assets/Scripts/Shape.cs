@@ -45,7 +45,7 @@ public class Shape : MonoBehaviour
         else if (Time.time - fallTime >= fallSpeed || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             transform.position += new Vector3(0, -1, 0);
-            if (isValidGridPos()) updateGrid(); 
+            if (isValidGridPos()) updateGrid();
             else
             {
                 transform.position += new Vector3(0, 1, 0);
@@ -55,6 +55,25 @@ public class Shape : MonoBehaviour
             }
             fallTime = Time.time;
         }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            while (true)
+            {
+                transform.position += new Vector3(0, -1, 0);
+                if (isValidGridPos()) updateGrid();
+                else
+                {
+                    transform.position += new Vector3(0, 1, 0);
+                    Grid.deleteFullRows();
+                    FindObjectOfType<Spawner>().spawnNext();
+                    enabled = false;
+                    break;
+                }
+                fallTime = Time.time;
+            }
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape)) Spawner.spawner.GameOver(false);
     }
 
     bool isValidGridPos()
@@ -64,18 +83,21 @@ public class Shape : MonoBehaviour
             Vector2 v = Grid.roundVec2(child.position);
             if (!Grid.insideBorder(v)) return false;
 
-            if (Grid.grid[(int)v.x, (int)v.y] != null) {
-                // Worker
-                if (Grid.grid[(int)v.x, (int)v.y].GetComponent<Worker>() != null)
+            if (Grid.grid[(int)v.x, (int)v.y] != null) if (Grid.grid[(int)v.x, (int)v.y].parent != transform) return false;
+
+            // Worker
+            for (int i = 0; i < Grid.Workers.Count; i++)
+            {
+                Transform worker = Grid.Workers[i];
+                if ((int)worker.position.x == (int)v.x && (int)worker.position.y == (int)v.y)
                 {
                     print("Worker hit");
-                    Destroy(Grid.grid[(int)v.x, (int)v.y].gameObject);
-                    Grid.grid[(int)v.x, (int)v.y] = null;
+                    Destroy(Grid.Workers[i].gameObject);
+                    Grid.Workers.RemoveAt(i);
+                    Spawner.spawner.lives -= 1;
                     // TODO: when worker is hit
                     return true;
                 }
-                // Something else
-                if (Grid.grid[(int)v.x, (int)v.y].parent != transform) return false;
             }
         }
         return true;

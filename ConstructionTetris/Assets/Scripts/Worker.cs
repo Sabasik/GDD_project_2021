@@ -10,6 +10,7 @@ public class Worker : MonoBehaviour
 
     void Start()
     {
+        Grid.Workers.Add(transform);
         moveDown();
     }
 
@@ -86,10 +87,11 @@ public class Worker : MonoBehaviour
     void updateGrid()
     {
         // Remove old
-        for (int y = 0; y < Grid.h; ++y) for (int x = 0; x < Grid.w; ++x) if (Grid.grid[x, y] != null) if (Grid.grid[x, y] == transform) Grid.grid[x, y] = null;
-
-        Vector2 v = Grid.roundVec2(transform.position);
-        Grid.grid[(int)v.x, (int)v.y] = transform;
+        for (int i = 0; i < Grid.Workers.Count; i++) if (Grid.Workers[i] == transform)
+            {
+                Vector2 v = Grid.roundVec2(transform.position);
+                Grid.Workers[i] = transform;
+            }
     }
 
     bool isValidGridPos()
@@ -97,7 +99,10 @@ public class Worker : MonoBehaviour
         Vector2 v = Grid.roundVec2(transform.position);
         if (!Grid.insideBorder(v)) return false;
 
-        if (Grid.grid[(int)v.x, (int)v.y] != null && Grid.grid[(int)v.x, (int)v.y] != transform) return false;
+        //if (Grid.grid[(int)v.x, (int)v.y] != null && Grid.grid[(int)v.x, (int)v.y] != transform) return false;
+        if (Grid.grid[(int)v.x, (int)v.y] != null) return false;
+
+        foreach (Transform trans in Grid.Workers) if(trans != transform) if ((int)trans.position.x == (int)v.x && (int)trans.position.y == (int)v.y) return false;
 
         return true;
     }
