@@ -73,7 +73,7 @@ public class Shape : MonoBehaviour
             }
 
         }
-        else if (Input.GetKeyDown(KeyCode.Escape)) Spawner.spawner.GameOver(false);
+        else if (Input.GetKeyDown(KeyCode.Escape)) Spawner.spawner.GameOver(false, true);
     }
 
     bool isValidGridPos()

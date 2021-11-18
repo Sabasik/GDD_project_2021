@@ -11,6 +11,7 @@ public class UI : MonoBehaviour
     public Button NewGame;
     public Button Quit;
     public TextMeshProUGUI Message;
+    public static string mess = ""; 
 
     private void Awake()
     {
@@ -29,12 +30,12 @@ public class UI : MonoBehaviour
 
     void Start()
     {
-
+        Message.text = mess;
     }
 
     void Update()
     {
-        
+        Message.text = mess;
     }
 
     public void StartGame()
