@@ -6,7 +6,17 @@ using UnityEngine.UI;
 
 public class SettingsUI : MonoBehaviour
 {
+    public Toggle sound;
 
+    private void Start()
+    {
+        sound.isOn = Events.soundOn;
+    }
+
+    public void ToggleSound()
+    {
+        Events.soundOn = sound.isOn;
+    }
     public void BackToMainMenu()
     {
         SceneManager.LoadScene("Menu");

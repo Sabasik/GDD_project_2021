@@ -21,6 +21,7 @@ public class AudioClipGroup : ScriptableObject
 
     public void Play()
     {
+        if (!Events.soundOn) return;
         if (timestamp > Time.time) return;
         if (AudioClips.Count <= 0) return;
 

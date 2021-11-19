@@ -8,6 +8,7 @@ public static class Events
     public static event Action<string> GameEndMessage;
     public static void SetMessage(string message) => GameEndMessage?.Invoke(message);
 
+    public static bool soundOn = true;
 
     static int[] LivesOptions = { 1, 3, 5 };
     static int[] TimeOptions = { 1, 3, 5 };
