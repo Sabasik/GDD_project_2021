@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +5,15 @@ using UnityEngine;
 public class Worker : MonoBehaviour
 {
 
-    private bool moving = false;
+    private bool movedByUser = false;
+    public float moveTime = 1.5f;
+    private float timer = 0;
 
     void Start()
     {
         Grid.Workers.Add(transform);
         moveDown();
+        timer = Time.time + moveTime;
     }
 
     void Update()
@@ -20,14 +22,14 @@ public class Worker : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0) && isClicked(mousePos))
         {
-            moving = true;
+            movedByUser = true;
             if (isValidPos(mousePos))
             {
                 transform.position = moveTo(mousePos);
                 updateGrid();
             }
         }
-        if (moving && Input.GetMouseButton(0))
+        if (movedByUser && Input.GetMouseButton(0))
         {
             if(isValidPos(mousePos))
             {
@@ -35,7 +37,7 @@ public class Worker : MonoBehaviour
                 updateGrid();
             }
         }
-        if (moving && Input.GetMouseButtonUp(0))
+        if (movedByUser && Input.GetMouseButtonUp(0))
         {
             if (isValidPos(mousePos))
             {
@@ -43,8 +45,33 @@ public class Worker : MonoBehaviour
                 updateGrid();
                 moveDown();
             }
-            moving = false;
+            movedByUser = false;
         }
+
+        if (Time.time >= timer)
+        {
+            // move randomly to left or right (if possible) or stay put
+            // if not possible then move the other way
+            int gen = Random.Range(0, 3);
+            if(gen == 0) // left
+            {
+                Vector3 startPos = transform.position;
+                if (transform.position.x > 0) transform.position += new Vector3(-1, 0, 0);
+                if (!isValidGridPos()) while (transform.position.y < Grid.h && Grid.grid[(int)transform.position.x, (int)transform.position.y] != null) transform.position += new Vector3(0, 1, 0);
+                if (!isValidGridPos()) transform.position = startPos;
+                moveDown();
+            }
+            else if (gen == 2) // right
+            {
+                Vector3 startPos = transform.position;
+                if (transform.position.x < Grid.w - 1) transform.position += new Vector3(1, 0, 0);
+                if (!isValidGridPos()) while (transform.position.y < Grid.h && Grid.grid[(int)transform.position.x, (int)transform.position.y] != null) transform.position += new Vector3(0, 1, 0);
+                if (!isValidGridPos()) transform.position = startPos;
+                moveDown();
+            }
+            timer += moveTime;
+        }
+        
     }
 
     private bool isClicked(Vector3 mousePos)
