@@ -253,6 +253,7 @@ MonoBehaviour:
   ThudAudio: {fileID: 11400000, guid: edbb4f45add38ea4396c72bcc48e6589, type: 2}
   OwAudio: {fileID: 11400000, guid: 04fc8fa9ecaf25b408ad9e33c923170f, type: 2}
   SquashAudio: {fileID: 11400000, guid: 308f62e6418cafa46b393d9b9ade005b, type: 2}
+  ShuffleAudio: {fileID: 11400000, guid: 4df4302933f5db24c955839abc0096e3, type: 2}
   LivesText: {fileID: 1398314919}
   TimeText: {fileID: 1093699493}
   Worker: {fileID: 640313584318516503, guid: ec0c5982d64f93f41a8200d06ea484e2, type: 3}

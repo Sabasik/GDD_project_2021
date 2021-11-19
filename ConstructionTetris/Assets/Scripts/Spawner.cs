@@ -11,6 +11,7 @@ public class Spawner : MonoBehaviour
     public AudioClipGroup ThudAudio;
     public AudioClipGroup OwAudio;
     public AudioClipGroup SquashAudio;
+    public AudioClipGroup ShuffleAudio;
 
     public TextMeshProUGUI LivesText;
     public TextMeshProUGUI TimeText;

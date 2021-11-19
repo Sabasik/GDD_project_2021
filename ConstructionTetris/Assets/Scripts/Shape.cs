@@ -38,7 +38,11 @@ public class Shape : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             transform.Rotate(0, 0, -90);
-            if (isValidGridPos()) updateGrid();
+            if (isValidGridPos())
+            {
+                updateGrid();
+                Spawner.spawner.ShuffleAudio.Play();
+            }
             else transform.Rotate(0, 0, 90);
         }
         // Move Down
