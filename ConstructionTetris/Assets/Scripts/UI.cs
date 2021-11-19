@@ -81,4 +81,24 @@ public class UI : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void SettingsMenu()
+    {
+        SceneManager.LoadScene("SettingsMenu");
+    }
+
+    public void ThemesMenu()
+    {
+        SceneManager.LoadScene("ThemesMenu");
+    }
+
+    public void InfoMenu()
+    {
+        SceneManager.LoadScene("InfoMenu");
+    }
 }
