@@ -8,6 +8,10 @@ public class Spawner : MonoBehaviour
 {
     public static Spawner spawner;
 
+    public AudioClipGroup ThudAudio;
+    public AudioClipGroup OwAudio;
+    public AudioClipGroup SquashAudio;
+
     public TextMeshProUGUI LivesText;
     public TextMeshProUGUI TimeText;
 

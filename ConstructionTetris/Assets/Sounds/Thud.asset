@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd846871d302cc4ea527a6a66f850f2, type: 3}
+  m_Name: Thud
+  m_EditorClassIdentifier: 
+  minVolume: 2
+  maxVolume: 4
+  minPitch: 1
+  maxPitch: 1
+  Cooldown: 0.5
+  AudioClips:
+  - {fileID: 8300000, guid: af3ccda00ced6ba4cbdf3a841439cdd2, type: 3}
+  - {fileID: 8300000, guid: 6d308258aa15f4c4c8b349f02ef66762, type: 3}
+  - {fileID: 8300000, guid: 80f67a27e88f5314bb5b21085c233737, type: 3}

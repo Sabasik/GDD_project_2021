@@ -50,6 +50,7 @@ public class Shape : MonoBehaviour
             {
                 transform.position += new Vector3(0, 1, 0);
                 Grid.deleteFullRows();
+                Spawner.spawner.ThudAudio.Play();
                 FindObjectOfType<Spawner>().spawnNext();
                 enabled = false;
             }
@@ -65,6 +66,7 @@ public class Shape : MonoBehaviour
                 {
                     transform.position += new Vector3(0, 1, 0);
                     Grid.deleteFullRows();
+                    Spawner.spawner.ThudAudio.Play();
                     FindObjectOfType<Spawner>().spawnNext();
                     enabled = false;
                     break;
@@ -92,6 +94,8 @@ public class Shape : MonoBehaviour
                 if ((int)worker.position.x == (int)v.x && (int)worker.position.y == (int)v.y)
                 {
                     print("Worker hit");
+                    Spawner.spawner.SquashAudio.Play();
+                    Spawner.spawner.OwAudio.Play();
                     Destroy(Grid.Workers[i].gameObject);
                     Grid.Workers.RemoveAt(i);
                     Spawner.spawner.lives -= 1;
