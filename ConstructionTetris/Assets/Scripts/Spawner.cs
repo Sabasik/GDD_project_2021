@@ -12,6 +12,9 @@ public class Spawner : MonoBehaviour
     public AudioClipGroup OwAudio;
     public AudioClipGroup SquashAudio;
     public AudioClipGroup ShuffleAudio;
+    public AudioClipGroup LastThreeSeconds;
+    public AudioClipGroup RemoveRow;
+    // public AudioClipGroup GameplayAudio;
 
     public TextMeshProUGUI LivesText;
     public TextMeshProUGUI TimeText;
@@ -24,6 +27,7 @@ public class Spawner : MonoBehaviour
     public float gameLength = 180f;
 
     private float endTime = 0;
+    private bool countdown = false;
 
     private void Awake()
     {
@@ -31,6 +35,7 @@ public class Spawner : MonoBehaviour
         workerCount = Events.workerCount;
         lives = Events.lives;
         gameLength = Events.gameLength;
+        //GameplayAudio.Play();
     }
 
     private void Start()
@@ -45,6 +50,11 @@ public class Spawner : MonoBehaviour
     private void Update()
     {
         if (endTime <= Time.time) GameOver(true);
+        if (Time.time + 4 >= endTime && !countdown) {
+            countdown = true;
+            LastThreeSeconds.Play();
+        }
+            
         if (lives <= 0) GameOver(false);
         TimeText.text = (int)(endTime - Time.time) + "";
     }
