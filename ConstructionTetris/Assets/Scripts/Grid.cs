@@ -67,6 +67,7 @@ public class Grid : MonoBehaviour
                 deleteRow(y);
                 decreaseRowsAbove(y + 1);
                 --y;
+                Spawner.spawner.RemoveRow.Play();
             }
         }
     }
