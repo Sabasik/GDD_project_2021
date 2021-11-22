@@ -9,6 +9,15 @@ public class Grid : MonoBehaviour
     public static Transform[,] grid = new Transform[w, h];
     public static List<Transform> Workers = new List<Transform>();
 
+    private void Start()
+    {
+        Workers = new List<Transform>();
+    }
+    public static void RemoveEmpty()
+    {
+        for (int i = Workers.Count - 1; i >= 0; i--) if (Workers[i] == null) Workers.RemoveAt(i);
+    }
+
     public static Vector2 roundVec2(Vector2 v)
     {
         return new Vector2(Mathf.Round(v.x), Mathf.Round(v.y));

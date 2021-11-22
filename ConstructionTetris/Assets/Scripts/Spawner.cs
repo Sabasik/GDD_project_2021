@@ -41,6 +41,9 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        workerCount = Events.workerCount;
+        lives = Events.lives;
+        gameLength = Events.gameLength;
         LivesText.text = "Lives: " + lives;
         TimeText.text = "Time: " + gameLength;
         endTime = Time.time + gameLength;

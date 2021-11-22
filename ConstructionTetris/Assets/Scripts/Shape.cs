@@ -95,18 +95,19 @@ public class Shape : MonoBehaviour
             for (int i = 0; i < Grid.Workers.Count; i++)
             {
                 Transform worker = Grid.Workers[i];
-                if ((int)worker.position.x == (int)v.x && (int)worker.position.y == (int)v.y)
+                if (worker != null && (int)worker.position.x == (int)v.x && (int)worker.position.y == (int)v.y)
                 {
                     print("Worker hit");
                     Spawner.spawner.SquashAudio.Play();
                     Spawner.spawner.OwAudio.Play();
                     Destroy(Grid.Workers[i].gameObject);
-                    Grid.Workers.RemoveAt(i);
+                    Grid.Workers[i] = null;
                     Spawner.spawner.lives -= 1;
                     // TODO: when worker is hit
-                    return true;
+                    //return true;
                 }
             }
+            Grid.RemoveEmpty();
         }
         return true;
     }

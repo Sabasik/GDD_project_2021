@@ -138,7 +138,7 @@ public class Worker : MonoBehaviour
         //if (Grid.grid[(int)v.x, (int)v.y] != null && Grid.grid[(int)v.x, (int)v.y] != transform) return false;
         if (Grid.grid[(int)v.x, (int)v.y] != null) return false;
 
-        foreach (Transform trans in Grid.Workers) if(trans != transform) if ((int)trans.position.x == (int)v.x && (int)trans.position.y == (int)v.y) return false;
+        foreach (Transform trans in Grid.Workers) if(trans != null && trans != transform) if ((int)trans.position.x == (int)v.x && (int)trans.position.y == (int)v.y) return false;
 
         return true;
     }
