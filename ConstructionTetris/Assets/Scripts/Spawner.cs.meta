@@ -3,7 +3,15 @@ guid: abb375be5a02c5041a8c8b83504acfda
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ThudAudio: {instanceID: 0}
+  - OwAudio: {instanceID: 0}
+  - SquashAudio: {instanceID: 0}
+  - ShuffleAudio: {instanceID: 0}
+  - BackgroundAudio: {fileID: 11400000, guid: f5c17092c768fae47ae05c0df76a7465, type: 2}
+  - LivesText: {instanceID: 0}
+  - TimeText: {instanceID: 0}
+  - Worker: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

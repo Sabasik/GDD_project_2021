@@ -256,7 +256,7 @@ MonoBehaviour:
   ShuffleAudio: {fileID: 11400000, guid: 4df4302933f5db24c955839abc0096e3, type: 2}
   LivesText: {fileID: 1398314919}
   TimeText: {fileID: 1093699493}
-  Worker: {fileID: 640313584318516503, guid: ec0c5982d64f93f41a8200d06ea484e2, type: 3}
+  Worker: {fileID: 735435195642633561, guid: f0177d20f416c1c48a3945e63602dbdb, type: 3}
   Shapes:
   - {fileID: 6439402458340254912, guid: 017d4a2f2038b8944b8403871b8c464f, type: 3}
   - {fileID: 6439402458340254912, guid: 5dc542ca0aaca5447ba3124b26d6e80d, type: 3}

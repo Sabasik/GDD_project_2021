@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Shape : MonoBehaviour
 {
+
     private float fallTime = 0;
     public float fallSpeed = 1f;
-
 
     void Start()
     {

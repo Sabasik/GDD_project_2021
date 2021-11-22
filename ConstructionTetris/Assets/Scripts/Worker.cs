@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Worker : MonoBehaviour
 {
+    private Animator animator;
 
     private bool movedByUser = false;
     public float moveTime = 1.5f;
@@ -11,20 +12,25 @@ public class Worker : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         Grid.Workers.Add(transform);
         moveDown();
         timer = Time.time + moveTime;
+
     }
 
     void Update()
     {
         moveDown();
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
         if (Input.GetMouseButtonDown(0) && isClicked(mousePos))
         {
+
             movedByUser = true;
             if (isValidPos(mousePos))
             {
+                
                 transform.position = moveTo(mousePos);
                 updateGrid();
             }
@@ -39,8 +45,10 @@ public class Worker : MonoBehaviour
         }
         if (movedByUser && Input.GetMouseButtonUp(0))
         {
+            animator.SetTrigger("Land");
             if (isValidPos(mousePos))
             {
+                
                 transform.position = moveTo(mousePos);
                 updateGrid();
                 moveDown();
@@ -71,7 +79,8 @@ public class Worker : MonoBehaviour
             }
             timer += moveTime;
         }
-        
+
+        animator.SetBool("Jump", movedByUser);
     }
 
     private bool isClicked(Vector3 mousePos)
