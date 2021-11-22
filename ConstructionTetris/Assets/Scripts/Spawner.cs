@@ -33,6 +33,7 @@ public class Spawner : MonoBehaviour
     {
         spawner = this;
         workerCount = Events.workerCount;
+        print(workerCount);
         lives = Events.lives;
         gameLength = Events.gameLength;
         //GameplayAudio.Play();
@@ -57,6 +58,7 @@ public class Spawner : MonoBehaviour
             
         if (lives <= 0) GameOver(false);
         TimeText.text = (int)(endTime - Time.time) + "";
+        LivesText.text = "Lives: " + lives;
     }
 
     public void GameOver(bool win, bool esc = false)

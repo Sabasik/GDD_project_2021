@@ -35,6 +35,9 @@ public class UI : MonoBehaviour
     void Start()
     {
         Message.text = mess;
+        TimeOptionText.text = "Length: " + Events.TimeOptions[Events.timeOption] + " min";
+        LivesOptionText.text = "Lives: " + Events.LivesOptions[Events.livesOption];
+        DifficultyOptionText.text = "Difficulty: " + Events.DifficultyOptions[Events.diffOption];
     }
 
     void Update()

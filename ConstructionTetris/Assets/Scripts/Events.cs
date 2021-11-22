@@ -10,12 +10,12 @@ public static class Events
 
     public static bool soundOn = true;
 
-    static int[] LivesOptions = { 1, 3, 5 };
-    static int[] TimeOptions = { 1, 3, 5 };
-    static string[] DifficultyOptions = { "easy", "medium", "hard" };
-    private static int livesOption = 1;
-    private static int timeOption = 1;
-    private static int diffOption = 1;
+    public static int[] LivesOptions = { 1, 3, 5 };
+    public static int[] TimeOptions = { 1, 3, 5 };
+    public static string[] DifficultyOptions = { "easy", "medium", "hard" };
+    public static int livesOption = 1;
+    public static int timeOption = 1;
+    public static int diffOption = 1;
 
     public static int workerCount = 3;
     public static int lives = 3;
