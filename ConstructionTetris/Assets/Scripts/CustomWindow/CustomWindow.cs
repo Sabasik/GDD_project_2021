@@ -5,6 +5,7 @@ using System.IO;
 public class CustomWindow : EditorWindow
 {
     // Found help from https://rumorgames.com/fast-scene-switching-in-the-unity-editor/
+    // Also helpful tutorial was https://www.youtube.com/watch?v=491TSNwXTIg
 
     // Add menu item named "Custom Window" to the Window menu
     [MenuItem("Window/Custom Window")]
