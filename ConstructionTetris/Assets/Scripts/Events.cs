@@ -17,6 +17,8 @@ public static class Events
     public static int timeOption = 1;
     public static int diffOption = 1;
 
+    public static bool reversed = false;
+
     public static int workerCount = 3;
     public static int lives = 3;
     public static float gameLength = 180f;
@@ -69,5 +71,10 @@ public static class Events
             workerCount -= 2;
         }
         return "Difficulty: " + DifficultyOptions[diffOption];
+    }
+    public static string ChangeReversed()
+    {
+        reversed = !reversed;
+        return "Reversed: " + (reversed ? "on" : "off");
     }
 }

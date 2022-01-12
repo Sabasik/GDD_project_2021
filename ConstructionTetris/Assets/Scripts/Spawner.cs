@@ -28,10 +28,13 @@ public class Spawner : MonoBehaviour
 
     private float endTime = 0;
     private bool countdown = false;
+    private bool reversed = false;
+    public float killed;
 
     private void Awake()
     {
         spawner = this;
+        reversed = Events.reversed;
         workerCount = Events.workerCount;
         print(workerCount);
         lives = Events.lives;
@@ -41,10 +44,12 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        killed = 0;
         workerCount = Events.workerCount;
         lives = Events.lives;
         gameLength = Events.gameLength;
-        LivesText.text = "Lives: " + lives;
+        if(!reversed) LivesText.text = "Lives: " + lives;
+        else LivesText.text = "Killed: " + killed;
         TimeText.text = "Time: " + gameLength;
         endTime = Time.time + gameLength;
         for (int i = 0; i < workerCount; i++) SpawnWorker();
@@ -58,10 +63,16 @@ public class Spawner : MonoBehaviour
             countdown = true;
             LastThreeSeconds.Play();
         }
-            
-        if (lives <= 0) GameOver(false);
+        if (!reversed)
+        {
+            if (lives <= 0) GameOver(false);
+            LivesText.text = "Lives: " + lives;
+        }
+        else
+        {
+            LivesText.text = "Killed: " + killed;
+        }
         TimeText.text = (int)(endTime - Time.time) + "";
-        LivesText.text = "Lives: " + lives;
     }
 
     public void GameOver(bool win, bool esc = false)
@@ -70,6 +81,7 @@ public class Spawner : MonoBehaviour
         if (win) message = "You Won!";
         else message = "You Lost!";
         if (esc) message = "";
+        if (Events.reversed) message = "Killed: " + killed;
         UI.mess = message;
         SceneManager.LoadScene("Menu");
         //Events.SetMessage(message);

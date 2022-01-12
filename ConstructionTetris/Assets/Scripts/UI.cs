@@ -16,6 +16,7 @@ public class UI : MonoBehaviour
     public TextMeshProUGUI LivesOptionText;
     public TextMeshProUGUI TimeOptionText;
     public TextMeshProUGUI DifficultyOptionText;
+    public TextMeshProUGUI ReversedOptionText;
 
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class UI : MonoBehaviour
         TimeOptionText.text = "Length: " + Events.TimeOptions[Events.timeOption] + " min";
         LivesOptionText.text = "Lives: " + Events.LivesOptions[Events.livesOption];
         DifficultyOptionText.text = "Difficulty: " + Events.DifficultyOptions[Events.diffOption];
+        ReversedOptionText.text = "Reversed: " + (Events.reversed ? "on" : "off");
     }
 
     void Update()
@@ -73,6 +75,11 @@ public class UI : MonoBehaviour
     public void IncreaseDifficulty()
     {
         DifficultyOptionText.text = Events.ChangeDifficulty(true);
+    }
+
+    public void ChangeReversed()
+    {
+        ReversedOptionText.text = Events.ChangeReversed();
     }
 
     public void StartGame()

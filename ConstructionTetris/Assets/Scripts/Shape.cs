@@ -103,6 +103,11 @@ public class Shape : MonoBehaviour
                     Destroy(Grid.Workers[i].gameObject);
                     Grid.Workers[i] = null;
                     Spawner.spawner.lives -= 1;
+                    if (Events.reversed)
+                    {
+                        Spawner.spawner.killed += 1;
+                        Spawner.spawner.SpawnWorker();
+                    }
                     // TODO: when worker is hit
                     //return true;
                 }
