@@ -80,8 +80,8 @@ public class Spawner : MonoBehaviour
         var message = "";
         if (win) message = "You Won!";
         else message = "You Lost!";
-        if (esc) message = "";
         if (Events.reversed) message = "Killed: " + killed;
+        if (esc) message = "";
         UI.mess = message;
         SceneManager.LoadScene("Menu");
         //Events.SetMessage(message);

@@ -15,6 +15,7 @@ public class Shape : MonoBehaviour
             Debug.Log("GAME OVER");
             updateGrid();
             Destroy(gameObject);
+            Spawner.spawner.GameOver(false);
         }
     }
 
