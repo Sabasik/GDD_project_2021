@@ -7,6 +7,7 @@ public class Shape : MonoBehaviour
 
     private float fallTime = 0;
     public float fallSpeed = 1f;
+    //public string theme;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class Shape : MonoBehaviour
             updateGrid();
             Destroy(gameObject);
         }
+        
     }
 
     void Update()

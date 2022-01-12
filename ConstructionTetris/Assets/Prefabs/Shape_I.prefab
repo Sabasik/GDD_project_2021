@@ -130,6 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675b7fdfff32a8b459036dc12b28d3b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallSpeed: 1
+  theme: dark
 --- !u!1 &6439402458653045658
 GameObject:
   m_ObjectHideFlags: 0

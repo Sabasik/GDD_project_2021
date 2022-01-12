@@ -36,8 +36,8 @@ public class CustomWindow : EditorWindow
             }
         }
 
-        EditorGUILayout.EndScrollView();
-        EditorGUILayout.EndVertical();
+        //EditorGUILayout.EndScrollView();
+        //EditorGUILayout.EndVertical();
 
     }
 }

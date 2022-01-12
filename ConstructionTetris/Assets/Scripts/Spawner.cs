@@ -20,7 +20,13 @@ public class Spawner : MonoBehaviour
     public TextMeshProUGUI TimeText;
 
     public GameObject Worker;
+
     public GameObject[] Shapes;
+
+    public GameObject[] Shapes_original;
+    public GameObject[] Shapes_dark;
+    //public GameObject[] Shapes_special;
+
 
     public int workerCount = 3;
     public int lives = 3;
@@ -28,6 +34,8 @@ public class Spawner : MonoBehaviour
 
     private float endTime = 0;
     private bool countdown = false;
+
+    public static string theme;
 
     private void Awake()
     {
@@ -37,6 +45,7 @@ public class Spawner : MonoBehaviour
         lives = Events.lives;
         gameLength = Events.gameLength;
         //GameplayAudio.Play();
+        
     }
 
     private void Start()
@@ -44,8 +53,19 @@ public class Spawner : MonoBehaviour
         LivesText.text = "Lives: " + lives;
         TimeText.text = "Time: " + gameLength;
         endTime = Time.time + gameLength;
+        
+        if (theme == "original")
+        {
+            Shapes = Shapes_original;
+        }
+        else if (theme == "dark"){
+            Shapes = Shapes_dark;
+        }
+
         for (int i = 0; i < workerCount; i++) SpawnWorker();
         spawnNext();
+        
+        
     }
 
     private void Update()
