@@ -259,6 +259,7 @@ MonoBehaviour:
   LivesText: {fileID: 1398314919}
   TimeText: {fileID: 1093699493}
   Worker: {fileID: 735435195642633561, guid: f0177d20f416c1c48a3945e63602dbdb, type: 3}
+  Zombie: {fileID: 99587706256601835, guid: 4ce8df15a3958ce4d9e2ca594bb31cfa, type: 3}
   Shapes:
   - {fileID: 6439402458340254912, guid: 017d4a2f2038b8944b8403871b8c464f, type: 3}
   - {fileID: 6439402458340254912, guid: 5dc542ca0aaca5447ba3124b26d6e80d, type: 3}
@@ -286,6 +287,7 @@ MonoBehaviour:
   workerCount: 3
   lives: 3
   gameLength: 60
+  killed: 0
 --- !u!114 &141873182
 MonoBehaviour:
   m_ObjectHideFlags: 0

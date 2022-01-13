@@ -20,6 +20,7 @@ public class Spawner : MonoBehaviour
     public TextMeshProUGUI TimeText;
 
     public GameObject Worker;
+    public GameObject Zombie;
 
     public GameObject[] Shapes;
 
@@ -109,7 +110,8 @@ public class Spawner : MonoBehaviour
 
     public void SpawnWorker()
     {
-        Instantiate(Worker, transform.position, Quaternion.identity);
+        if(!reversed) Instantiate(Worker, transform.position, Quaternion.identity);
+        else Instantiate(Zombie, transform.position, Quaternion.identity);
     }
 
     public void spawnNext()
