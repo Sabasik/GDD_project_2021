@@ -7,6 +7,7 @@ public class Shape : MonoBehaviour
 
     private float fallTime = 0;
     public float fallSpeed = 1f;
+    //public string theme;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class Shape : MonoBehaviour
             Destroy(gameObject);
             Spawner.spawner.GameOver(false);
         }
+        
     }
 
     void Update()

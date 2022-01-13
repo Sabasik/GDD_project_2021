@@ -256,11 +256,26 @@ MonoBehaviour:
   ShuffleAudio: {fileID: 11400000, guid: 4df4302933f5db24c955839abc0096e3, type: 2}
   LastThreeSeconds: {fileID: 11400000, guid: ce89b50c6900efa41bade24a9d5ad44d, type: 2}
   RemoveRow: {fileID: 11400000, guid: cc2d19a4a6eae5542be785e613eb0f82, type: 2}
-  GameplayAudio: {fileID: 11400000, guid: 1ecbaaabe63fbc144b4e5532ccd7914e, type: 2}
   LivesText: {fileID: 1398314919}
   TimeText: {fileID: 1093699493}
   Worker: {fileID: 735435195642633561, guid: f0177d20f416c1c48a3945e63602dbdb, type: 3}
   Shapes:
+  - {fileID: 6439402458340254912, guid: 017d4a2f2038b8944b8403871b8c464f, type: 3}
+  - {fileID: 6439402458340254912, guid: 5dc542ca0aaca5447ba3124b26d6e80d, type: 3}
+  - {fileID: 6439402458340254912, guid: f20f7c1bc83d21a49b68cbf09542d39a, type: 3}
+  - {fileID: 6439402458340254912, guid: a9a9e5e87ae3ce144b47924932a03f77, type: 3}
+  - {fileID: 6439402458340254912, guid: 5acaff2468bb8184f8755dbb98c6dde2, type: 3}
+  - {fileID: 6439402458340254912, guid: 60ec84929872f7f4280566597ebf70ef, type: 3}
+  - {fileID: 6439402458340254912, guid: 5853bd9e50d4a64419105908505d5f64, type: 3}
+  Shapes_original:
+  - {fileID: 6439402458340254912, guid: 493b4a6e4fe9b934eb6d621039645d36, type: 3}
+  - {fileID: 6439402458340254912, guid: fb5ee47aa90f2994d913bdfbaca3dec5, type: 3}
+  - {fileID: 6439402458340254912, guid: c32a2eee72364c44d9fda819539a89e0, type: 3}
+  - {fileID: 6439402458340254912, guid: f222cccf37396af4aa63935f30c3c427, type: 3}
+  - {fileID: 6439402458340254912, guid: 4d24843a24e59ac479f3fe208c5c5d96, type: 3}
+  - {fileID: 6439402458340254912, guid: 1c34496e77553854988c54b992f4ba1b, type: 3}
+  - {fileID: 6439402458340254912, guid: 7fbb8c2fb373e5d41b4957e3cb726bcf, type: 3}
+  Shapes_dark:
   - {fileID: 6439402458340254912, guid: 017d4a2f2038b8944b8403871b8c464f, type: 3}
   - {fileID: 6439402458340254912, guid: 5dc542ca0aaca5447ba3124b26d6e80d, type: 3}
   - {fileID: 6439402458340254912, guid: f20f7c1bc83d21a49b68cbf09542d39a, type: 3}

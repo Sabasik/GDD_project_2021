@@ -17,11 +17,16 @@ public static class Events
     public static int timeOption = 1;
     public static int diffOption = 1;
 
+
     public static bool reversed = false;
+    public static string[] ThemesOptions = { "original", "dark", "special" };
+    //public static string theme = "original";
 
     public static int workerCount = 3;
     public static int lives = 3;
     public static float gameLength = 180f;
+    
+
     public static string ChangeTime(bool increase)
     {
         if (increase)
@@ -76,5 +81,31 @@ public static class Events
     {
         reversed = !reversed;
         return "Reversed: " + (reversed ? "on" : "off");
+    }
+
+    public static void ChangeThemeOriginal(bool original)
+    {
+        if (original)
+        {
+            Spawner.theme = "original";
+            Debug.Log("Theme was changed to original");
+        }
+    }
+
+    public static void ChangeThemeDark(bool dark)
+    {
+        if (dark)
+        {
+            Spawner.theme = "dark";
+            Debug.Log("Theme was changed to dark");
+        }
+    }
+    public static void ChangeThemeSpecial(bool special)
+    {
+        if (special)
+        {
+            Spawner.theme = "special";
+            Debug.Log("Theme was changed to special");
+        }
     }
 }
