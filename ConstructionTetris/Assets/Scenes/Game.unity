@@ -256,7 +256,6 @@ MonoBehaviour:
   ShuffleAudio: {fileID: 11400000, guid: 4df4302933f5db24c955839abc0096e3, type: 2}
   LastThreeSeconds: {fileID: 11400000, guid: ce89b50c6900efa41bade24a9d5ad44d, type: 2}
   RemoveRow: {fileID: 11400000, guid: cc2d19a4a6eae5542be785e613eb0f82, type: 2}
-  GameplayAudio: {fileID: 11400000, guid: 1ecbaaabe63fbc144b4e5532ccd7914e, type: 2}
   LivesText: {fileID: 1398314919}
   TimeText: {fileID: 1093699493}
   Worker: {fileID: 735435195642633561, guid: f0177d20f416c1c48a3945e63602dbdb, type: 3}
