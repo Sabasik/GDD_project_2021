@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
 
     public GameObject[] Shapes_original;
     public GameObject[] Shapes_dark;
-    //public GameObject[] Shapes_special;
+    public GameObject[] Shapes_special;
 
 
     public int workerCount = 3;
@@ -69,6 +69,10 @@ public class Spawner : MonoBehaviour
         }
         else if (theme == "dark"){
             Shapes = Shapes_dark;
+        }
+        else if (theme == "special")
+        {
+            Shapes = Shapes_special;
         }
 
         for (int i = 0; i < workerCount; i++) SpawnWorker();
