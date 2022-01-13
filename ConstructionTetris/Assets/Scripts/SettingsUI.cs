@@ -8,15 +8,19 @@ public class SettingsUI : MonoBehaviour
 {
     public Toggle sound;
     public Button instructions;
+    //AudioSource audioSource;
 
     private void Start()
     {
-        sound.isOn = Events.soundOn;
+        //sound.isOn = Events.soundOn;
+        //audioSource = GetComponent<AudioSource>();
     }
 
     public void ToggleSound()
     {
         Events.soundOn = sound.isOn;
+        //audioSource.mute = !audioSource.mute;
+
     }
     public void BackToMainMenu()
     {
