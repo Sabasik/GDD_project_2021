@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SettingsUI : MonoBehaviour
 {
     public Toggle sound;
+    public Button instructions;
 
     private void Start()
     {
@@ -35,5 +36,9 @@ public class SettingsUI : MonoBehaviour
     public void InfoMenu()
     {
         SceneManager.LoadScene("InfoMenu");
+    }
+    public void OpenInstructions()
+    {
+        SceneManager.LoadScene("Instructions");
     }
 }
