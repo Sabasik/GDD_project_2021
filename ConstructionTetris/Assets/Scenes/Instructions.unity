@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1273087692}
         m_TargetAssemblyTypeName: InfoUI, Assembly-CSharp
-        m_MethodName: SettingsMenu
+        m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
