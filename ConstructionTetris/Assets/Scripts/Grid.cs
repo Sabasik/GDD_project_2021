@@ -79,6 +79,7 @@ public class Grid : MonoBehaviour
                 Spawner.spawner.RemoveRow.Play();
                 Vector3 RDpos = Spawner.spawner.RowDisappear.transform.position;
                 RDpos.y = y;
+                Spawner.spawner.rowsCleared += 1;
                 Instantiate(Spawner.spawner.RowDisappear, RDpos, Quaternion.identity);
             }
         }

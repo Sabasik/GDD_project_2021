@@ -18,6 +18,7 @@ public class Spawner : MonoBehaviour
 
     public TextMeshProUGUI LivesText;
     public TextMeshProUGUI TimeText;
+    public TextMeshProUGUI RowsText;
 
     public GameObject Worker;
     public GameObject Zombie;
@@ -34,6 +35,8 @@ public class Spawner : MonoBehaviour
     public int workerCount = 3;
     public int lives = 3;
     public float gameLength = 180f;
+
+    public int rowsCleared = 0;
 
     private float endTime = 0;
     private bool countdown = false;
@@ -57,12 +60,14 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         killed = 0;
+        rowsCleared = 0;
         workerCount = Events.workerCount;
         lives = Events.lives;
         gameLength = Events.gameLength;
         if(!reversed) LivesText.text = "Lives: " + lives;
         else LivesText.text = "Killed: " + killed;
         TimeText.text = "Time: " + gameLength;
+        RowsText.text = "Rows Cleared: " + rowsCleared;
         endTime = Time.time + gameLength;
         
         if (theme == "original")
@@ -100,6 +105,7 @@ public class Spawner : MonoBehaviour
             LivesText.text = "Killed: " + killed;
         }
         TimeText.text = (int)(endTime - Time.time) + "";
+        RowsText.text = "Rows Cleared: " + rowsCleared;
     }
 
     public void GameOver(bool win, bool esc = false)
@@ -108,6 +114,7 @@ public class Spawner : MonoBehaviour
         if (win) message = "You Won!";
         else message = "You Lost!";
         if (Events.reversed) message = "Killed: " + killed;
+        message += "\nRows Cleared: " + rowsCleared;
         if (esc) message = "";
         UI.mess = message;
         SceneManager.LoadScene("Menu");
