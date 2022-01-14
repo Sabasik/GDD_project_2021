@@ -260,6 +260,7 @@ MonoBehaviour:
   TimeText: {fileID: 1093699493}
   Worker: {fileID: 735435195642633561, guid: f0177d20f416c1c48a3945e63602dbdb, type: 3}
   Zombie: {fileID: 99587706256601835, guid: 4ce8df15a3958ce4d9e2ca594bb31cfa, type: 3}
+  RowDisappear: {fileID: 7867985686436046369, guid: a1bd7369ad67aaa428b218e7f69aba46, type: 3}
   Shapes:
   - {fileID: 6439402458340254912, guid: 017d4a2f2038b8944b8403871b8c464f, type: 3}
   - {fileID: 6439402458340254912, guid: 5dc542ca0aaca5447ba3124b26d6e80d, type: 3}

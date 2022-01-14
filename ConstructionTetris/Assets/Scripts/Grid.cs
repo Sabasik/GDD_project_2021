@@ -77,6 +77,9 @@ public class Grid : MonoBehaviour
                 decreaseRowsAbove(y + 1);
                 --y;
                 Spawner.spawner.RemoveRow.Play();
+                Vector3 RDpos = Spawner.spawner.RowDisappear.transform.position;
+                RDpos.y = y;
+                Instantiate(Spawner.spawner.RowDisappear, RDpos, Quaternion.identity);
             }
         }
     }

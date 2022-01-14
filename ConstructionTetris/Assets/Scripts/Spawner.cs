@@ -22,6 +22,8 @@ public class Spawner : MonoBehaviour
     public GameObject Worker;
     public GameObject Zombie;
 
+    public GameObject RowDisappear;
+
     public GameObject[] Shapes;
 
     public GameObject[] Shapes_original;
