@@ -111,4 +111,9 @@ public class UI : MonoBehaviour
     {
         SceneManager.LoadScene("InfoMenu");
     }
+
+    public void InstructionsMenu()
+    {
+        SceneManager.LoadScene("Instructions");
+    }
 }
