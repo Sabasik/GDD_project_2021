@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd846871d302cc4ea527a6a66f850f2, type: 3}
   m_Name: Shuffle
   m_EditorClassIdentifier: 
-  minVolume: 0.7
-  maxVolume: 0.75
+  minVolume: 0.5
+  maxVolume: 0.6
   minPitch: 0.8
   maxPitch: 1.2
   Cooldown: 0.1

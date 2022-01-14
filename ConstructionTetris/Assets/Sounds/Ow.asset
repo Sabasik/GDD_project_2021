@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd846871d302cc4ea527a6a66f850f2, type: 3}
   m_Name: Ow
   m_EditorClassIdentifier: 
-  minVolume: 1
-  maxVolume: 1
+  minVolume: 0.2
+  maxVolume: 0.4
   minPitch: 1.25
   maxPitch: 3
   Cooldown: 0.1

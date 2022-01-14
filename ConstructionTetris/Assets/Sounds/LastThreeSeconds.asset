@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd846871d302cc4ea527a6a66f850f2, type: 3}
   m_Name: LastThreeSeconds
   m_EditorClassIdentifier: 
-  minVolume: 1
-  maxVolume: 1
+  minVolume: 0.1
+  maxVolume: 0.8
   minPitch: 1
   maxPitch: 1
   Cooldown: 0.1
